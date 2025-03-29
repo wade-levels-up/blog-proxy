@@ -6,8 +6,8 @@ const cors = require("cors");
 const app = express();
 
 const allowedOrigins = [
-  `https://coblog.netlify.app/app`,
-  `https://coblogauthor.netlify.app/app`,
+  `https://coblog.netlify.app`,
+  `https://coblogauthor.netlify.app`,
 ];
 
 const corsOptions = {
