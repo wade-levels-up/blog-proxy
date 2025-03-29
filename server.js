@@ -6,8 +6,8 @@ const cors = require("cors");
 const app = express();
 
 const allowedOrigins = [
-  `https://coblog.netlify.app`,
-  `https://coblogauthor.netlify.app`,
+  "https://coblog.netlify.app",
+  "https://coblogauthor.netlify.app",
 ];
 
 const corsOptions = {
@@ -15,7 +15,7 @@ const corsOptions = {
     if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error("Not allowed by CORS *"));
     }
   },
   optionsSuccessStatus: 200,
