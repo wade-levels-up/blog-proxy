@@ -23,7 +23,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(
-  "/api",
+  "/app",
   createProxyMiddleware({
     target: `${process.env.API}`,
     changeOrigin: true,
