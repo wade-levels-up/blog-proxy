@@ -1,8 +1,26 @@
 require("dotenv").config();
 const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
+const cors = require("cors");
 
 const app = express();
+
+const allowedOrigins = [
+  `https://coblog.netlify.app`,
+  `https://coblogauthor.netlify.app`,
+];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.use(
   "/api",
