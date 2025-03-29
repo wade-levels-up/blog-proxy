@@ -10,7 +10,7 @@ app.use(
     target: `${process.env.API}`,
     changeOrigin: true,
     pathRewrite: {
-      "^/api": "",
+      "^/api": `${process.env.API}`,
     },
   })
 );
