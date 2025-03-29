@@ -26,7 +26,7 @@ app.use(
   "/app",
   createProxyMiddleware({
     target: `${process.env.API}`,
-    changeOrigin: false,
+    changeOrigin: true,
     pathRewrite: {
       "^/app": "",
     },
