@@ -15,7 +15,7 @@ const corsOptions = {
     if (allowedOrigins.includes(origin) || !origin) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS *"));
+      callback(new Error("Not allowed by CORS"));
     }
   },
   optionsSuccessStatus: 200,
@@ -26,7 +26,7 @@ app.use(
   "/app",
   createProxyMiddleware({
     target: `${process.env.API}`,
-    changeOrigin: true,
+    changeOrigin: false,
     pathRewrite: {
       "^/app": "",
     },
